@@ -17,12 +17,11 @@ async function handle(req: NextRequest) {
   let fetchUrl = `https://cdn.discordapp.com/${reqPath}`;
 
   try {
-    const result = await fetch(fetchUrl, {
+    return await fetch(fetchUrl, {
       method: req.method,
       body: req.body,
       cache: "no-store",
     });
-    return result;
   } catch (error) {
     console.error(error);
   }
