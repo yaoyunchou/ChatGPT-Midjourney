@@ -119,15 +119,15 @@ export function SideBar(props: { className?: string }) {
       }`}
     >
       <div className={styles["sidebar-header"]}>
-        <div className={styles["sidebar-title"]}>ChatGPT-Midjourney</div>
+        <div className={styles["sidebar-title"]}>蕉内AI绘画</div>
         <div className={styles["sidebar-sub-title"]}>
-          Your own AI assistant.
+          power by Midjourney +GPT 3.5
         </div>
         <div className={styles["sidebar-logo"] + " no-dark"}>
           <ChatGptIcon />
         </div>
       </div>
-
+      {/* 
       <div className={styles["sidebar-header-bar"]}>
         <IconButton
           icon={<MaskIcon />}
@@ -143,7 +143,7 @@ export function SideBar(props: { className?: string }) {
           onClick={() => showToast(Locale.WIP)}
           shadow
         />
-      </div>
+      </div> */}
 
       <div
         className={styles["sidebar-body"]}
@@ -155,7 +155,24 @@ export function SideBar(props: { className?: string }) {
       >
         <ChatList narrow={shouldNarrow} />
       </div>
-
+      <div className={styles["sidebar-info"]}>
+        <h3>使用说明:</h3>
+        格式:/mj+描述词+(参数设置) 举例:/mj a yellow banana
+        <h3>功能说明:</h3>
+        U:放大图片补充细节
+        <br />
+        V:采用图片继续生成
+        <br />
+        0:按照描述重新生成
+        <br />
+        混图:图图融合新图
+        <br />
+        (玩法:图+图→图) 识图:图片转为描述
+        <br />
+        (玩法:图→文→图) 垫图:图文生成新图
+        <br />
+        (玩法:图+文→图)
+      </div>
       <div className={styles["sidebar-tail"]}>
         <div className={styles["sidebar-actions"]}>
           <div className={styles["sidebar-action"] + " " + styles.mobile}>
@@ -168,16 +185,16 @@ export function SideBar(props: { className?: string }) {
               }}
             />
           </div>
-          <div className={styles["sidebar-action"]}>
+          {/* <div className={styles["sidebar-action"]}>
             <Link to={Path.Settings}>
               <IconButton icon={<SettingsIcon />} shadow />
             </Link>
-          </div>
-          <div className={styles["sidebar-action"]}>
+          </div> */}
+          {/* <div className={styles["sidebar-action"]}>
             <a href={REPO_URL} target="_blank">
               <IconButton icon={<GithubIcon />} shadow />
             </a>
-          </div>
+          </div> */}
         </div>
         <div>
           <IconButton
