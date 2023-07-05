@@ -5,7 +5,7 @@ import styles from "./home.module.scss";
 import { IconButton } from "./button";
 import SettingsIcon from "../icons/settings.svg";
 import GithubIcon from "../icons/github.svg";
-import ChatGptIcon from "../icons/chatgpt.svg";
+import ChatGptIcon from "../icons/big_avatar.svg";
 import AddIcon from "../icons/add.svg";
 import CloseIcon from "../icons/close.svg";
 import MaskIcon from "../icons/mask.svg";
@@ -124,7 +124,7 @@ export function SideBar(props: { className?: string }) {
           power by Midjourney +GPT 3.5
         </div>
         <div className={styles["sidebar-logo"] + " no-dark"}>
-          <ChatGptIcon />
+          <ChatGptIcon style={{ width: "44px" }} />
         </div>
       </div>
       {/* 
@@ -157,21 +157,31 @@ export function SideBar(props: { className?: string }) {
       </div>
       <div className={styles["sidebar-info"]}>
         <h3>使用说明:</h3>
-        格式:/mj+描述词+(参数设置) 举例:/mj a yellow banana
+        <div className={styles["info"]}>
+          格式: <b>/mj+描述词</b>+ (参数设置)
+        </div>
+        <div className={styles["info"]}>
+          举例: <b>/mj a yellow banana</b>
+        </div>
+        <br />
         <h3>功能说明:</h3>
-        U:放大图片补充细节
+        <div className={styles["info"]}>
+          <div className={styles["tip"]}>U</div>放大图片补充细节
+        </div>
+        <div className={styles["info"]}>
+          <div className={styles["tip"]}>V</div>采用图片继续生成
+        </div>
+
         <br />
-        V:采用图片继续生成
-        <br />
-        0:按照描述重新生成
-        <br />
-        混图:图图融合新图
-        <br />
-        (玩法:图+图→图) 识图:图片转为描述
-        <br />
-        (玩法:图→文→图) 垫图:图文生成新图
-        <br />
-        (玩法:图+文→图)
+        <div className={styles["info"]}>
+          混图: 图图融合新图
+          <br />
+          <p>(玩法:图+图→图)</p>
+          识图：图片转为描述词 <br />
+          <p>(玩法:图→文→图)</p>
+          垫图:图文生成新图
+          <p>(玩法:图+文→图)</p>
+        </div>
       </div>
       <div className={styles["sidebar-tail"]}>
         <div className={styles["sidebar-actions"]}>

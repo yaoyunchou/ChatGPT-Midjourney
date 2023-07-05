@@ -11,6 +11,7 @@ import CloseIcon from "../icons/close.svg";
 import DeleteIcon from "../icons/delete.svg";
 import EyeIcon from "../icons/eye.svg";
 import CopyIcon from "../icons/copy.svg";
+import JNavatar from "../icons/avatar2.svg";
 
 import { DEFAULT_MASK_AVATAR, Mask, useMaskStore } from "../store/mask";
 import { ChatMessage, ModelConfig, useAppConfig, useChatStore } from "../store";
@@ -33,6 +34,13 @@ export function MaskAvatar(props: { mask: Mask }) {
     <Avatar avatar={props.mask.avatar} />
   ) : (
     <Avatar model={props.mask.modelConfig.model} />
+  );
+}
+export function DefuatMaskAvatar() {
+  return (
+    <div className={chatStyle["default-avatar"]}>
+      <JNavatar style={{ width: "30px" }} />
+    </div>
   );
 }
 

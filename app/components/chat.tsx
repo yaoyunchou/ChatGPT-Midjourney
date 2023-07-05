@@ -2,6 +2,7 @@ import { useDebouncedCallback } from "use-debounce";
 import { useState, useRef, useEffect, useLayoutEffect } from "react";
 
 import SendWhiteIcon from "../icons/send-white.svg";
+import SendBlockIcon from "../icons/send.svg";
 import BrainIcon from "../icons/brain.svg";
 import RenameIcon from "../icons/rename.svg";
 import ExportIcon from "../icons/share.svg";
@@ -57,7 +58,7 @@ import { ListItem, Modal } from "./ui-lib";
 import { useLocation, useNavigate } from "react-router-dom";
 import { LAST_INPUT_KEY, Path, REQUEST_TIMEOUT_MS } from "../constant";
 import { Avatar } from "./emoji";
-import { MaskAvatar, MaskConfig } from "./mask";
+import { DefuatMaskAvatar, MaskAvatar, MaskConfig } from "./mask";
 import { useMaskStore } from "../store/mask";
 import { useCommand } from "../command";
 import { prettyObject } from "../utils/format";
@@ -434,7 +435,7 @@ export function ChatActions(props: {
           style={{ display: "none" }}
           onChange={onImageSelected}
         />
-        <UploadIcon />
+        <UploadIcon /> &nbsp; 上传图片
       </div>
     </div>
   );
@@ -842,7 +843,8 @@ export function Chat() {
                     {message.role === "user" ? (
                       <Avatar avatar={config.avatar} />
                     ) : (
-                      <MaskAvatar mask={session.mask} />
+                      // <MaskAvatar mask={session.mask} />
+                      <DefuatMaskAvatar />
                     )}
                   </div>
                   {showTyping && (
@@ -1088,10 +1090,10 @@ export function Chat() {
             autoFocus={autoFocus}
           />
           <IconButton
-            icon={<SendWhiteIcon />}
+            icon={<SendBlockIcon />}
             text={Locale.Chat.Send}
             className={styles["chat-input-send"]}
-            type="primary"
+            // type="primary"
             onClick={() => doSubmit(userInput)}
           />
         </div>
