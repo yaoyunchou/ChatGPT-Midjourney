@@ -158,10 +158,10 @@ export function SideBar(props: { className?: string }) {
       <div className={styles["sidebar-info"]}>
         <h3>使用说明:</h3>
         <div className={styles["info"]}>
-          格式: <b>/mj+描述词</b>+ (参数设置)
+          格式 &nbsp;&nbsp;<b>/mj+描述词</b>+ (参数设置)
         </div>
         <div className={styles["info"]}>
-          举例: <b>/mj a yellow banana</b>
+          举例 &nbsp;&nbsp; <b>/mj a yellow banana</b>
         </div>
         <br />
         <h3>功能说明:</h3>
@@ -174,13 +174,13 @@ export function SideBar(props: { className?: string }) {
 
         <br />
         <div className={styles["info"]}>
-          混图: 图图融合新图
+          混图：图图融合新图
           <br />
-          <p>(玩法:图+图→图)</p>
+          <p>(玩法：图+图→图)</p>
           识图：图片转为描述词 <br />
-          <p>(玩法:图→文→图)</p>
-          垫图:图文生成新图
-          <p>(玩法:图+文→图)</p>
+          <p>(玩法：图→文→图)</p>
+          垫图：图文生成新图
+          <p>(玩法：图+文→图)</p>
         </div>
       </div>
       <div className={styles["sidebar-tail"]}>
@@ -206,10 +206,9 @@ export function SideBar(props: { className?: string }) {
             </a>
           </div> */}
         </div>
-        <div>
-          <IconButton
-            icon={<AddIcon />}
-            text={shouldNarrow ? undefined : Locale.Home.NewChat}
+        {/* <div>
+          <button
+            className={styles["add-chat"]}
             onClick={() => {
               if (config.dontShowMaskSplashScreen) {
                 chatStore.newSession();
@@ -218,9 +217,8 @@ export function SideBar(props: { className?: string }) {
                 navigate(Path.NewChat);
               }
             }}
-            shadow
-          />
-        </div>
+          >+ {shouldNarrow ? undefined : Locale.Home.NewChat}</button>
+        </div> */}
       </div>
 
       <div

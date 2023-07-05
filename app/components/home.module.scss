@@ -64,6 +64,15 @@
   }
 }
 
+.add-chat{
+  background: #434343;
+  color: var(--white) !important;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
 .sidebar-drag {
   $width: 10px;
 
