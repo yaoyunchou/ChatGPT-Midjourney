@@ -7,8 +7,8 @@ export const config = {
 
 export function middleware(req: NextRequest) {
   // Parse the cookie
-//   const isInBeta = JSON.parse(req.cookies.get('beta')?.value || 'false')
-  console.log(process.env)
+    //   const isInBeta = JSON.parse(req.cookies.get('beta')?.value || 'false')
+    //   console.log(process.env)
   const ip = getIP(req)
   console.log('[User IP]', ip)
 //   console.log(req)
