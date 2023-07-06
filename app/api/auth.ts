@@ -4,7 +4,7 @@ import md5 from "spark-md5";
 import { ACCESS_CODE_PREFIX } from "../constant";
 import { OPENAI_URL } from "./common";
 
-function getIP(req: NextRequest) {
+export function getIP(req: NextRequest) {
   let ip = req.ip ?? req.headers.get("x-real-ip");
   const forwardedFor = req.headers.get("x-forwarded-for");
 
@@ -26,7 +26,10 @@ function parseApiKey(bearToken: string) {
 }
 
 export function auth(req: NextRequest) {
-  const authToken = req.headers.get("Authorization") ?? req.nextUrl.searchParams.get("Authorization") ?? "";
+  const authToken =
+    req.headers.get("Authorization") ??
+    req.nextUrl.searchParams.get("Authorization") ??
+    "";
 
   // check if it is openai api key or user token
   const { accessCode, apiKey: token } = parseApiKey(authToken);
