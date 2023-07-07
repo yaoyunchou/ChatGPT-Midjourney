@@ -117,8 +117,7 @@ export function ChatList(props: { narrow?: boolean }) {
           },
           {
             role: "user",
-            content:
-              "Write 4 sets of prompt words in English, and translate Chinese in the next paragraph after each set",
+            content: "Write 2 sets of prompt words in English",
             date: "",
           },
         ],
